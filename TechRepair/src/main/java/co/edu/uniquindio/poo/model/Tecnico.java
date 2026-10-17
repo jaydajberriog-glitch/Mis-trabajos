@@ -1,4 +1,5 @@
 package co.edu.uniquindio.poo.model;
+
 public class Tecnico {
     private String codigo; private String nombre; private String documento; private EspecialidadTecnico especialidad; private EstadoTecnico estado;
     public Tecnico(String codigo,String nombre,String documento,EspecialidadTecnico especialidad,EstadoTecnico estado){

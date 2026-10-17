@@ -1,4 +1,5 @@
 package co.edu.uniquindio.poo.model;
+
 public class ComputadorEscritorio extends Equipo {
     private String tipoProcesador; private int memoriaRamGB; private int almacenamientoGB; private boolean tarjetaGraficaDedicada;
     public ComputadorEscritorio(String codigo,String serie,String marca,String modelo,int anio,String estado,Cliente cliente,String procesador,int ram,int almacenamiento,boolean grafica) {

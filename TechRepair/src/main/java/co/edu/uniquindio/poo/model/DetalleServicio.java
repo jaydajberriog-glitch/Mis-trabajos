@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 import java.util.ArrayList;import java.util.List;
+
 public class DetalleServicio {
     private String codigo;private Equipo equipo;private Servicio servicio;private String fallaReportada;private Tecnico tecnico;private double horasTrabajo;private String observacionesTecnicas;private EstadoDetalle estado;private List<RepuestoUtilizado> repuestosUtilizados=new ArrayList<>();
     public DetalleServicio(String codigo,Equipo equipo,Servicio servicio,String falla){if(vacio(codigo)||equipo==null||servicio==null||vacio(falla))throw new IllegalArgumentException("Datos del detalle inválidos.");this.codigo=codigo;this.equipo=equipo;this.servicio=servicio;this.fallaReportada=falla;this.estado=EstadoDetalle.PENDIENTE;this.observacionesTecnicas="Sin observaciones";}

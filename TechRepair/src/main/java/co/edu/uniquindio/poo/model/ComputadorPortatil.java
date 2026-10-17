@@ -1,4 +1,5 @@
 package co.edu.uniquindio.poo.model;
+
 public class ComputadorPortatil extends Equipo {
     private double tamanoPantalla; private int memoriaRamGB; private int almacenamientoGB; private boolean bateriaExtraible;
     public ComputadorPortatil(String codigo,String serie,String marca,String modelo,int anio,String estado,Cliente cliente,double pantalla,int ram,int almacenamiento,boolean bateriaExtraible) {

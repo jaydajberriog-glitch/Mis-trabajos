@@ -1,4 +1,5 @@
 package co.edu.uniquindio.poo.model;
+
 public class Repuesto {
     private String codigo,nombre,descripcion; private double precioUnitario; private int cantidadDisponible; private CategoriaRepuesto categoria;
     public Repuesto(String codigo,String nombre,String descripcion,double precio,int cantidad,CategoriaRepuesto categoria){

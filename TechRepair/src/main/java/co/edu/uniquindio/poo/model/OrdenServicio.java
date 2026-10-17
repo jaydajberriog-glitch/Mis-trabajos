@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 import java.time.LocalDate;import java.util.ArrayList;import java.util.List;
+
 public class OrdenServicio {
     private String codigo;private LocalDate fechaCreacion;private Cliente cliente;private String observaciones;private EstadoOrden estado;private List<DetalleServicio> detalles=new ArrayList<>();
     public OrdenServicio(String codigo,Cliente cliente,String observaciones){if(codigo==null||codigo.trim().isEmpty()||cliente==null)throw new IllegalArgumentException("Código y cliente son obligatorios.");this.codigo=codigo;this.cliente=cliente;this.observaciones=observaciones==null?"":observaciones;this.fechaCreacion=LocalDate.now();this.estado=EstadoOrden.ABIERTA;}

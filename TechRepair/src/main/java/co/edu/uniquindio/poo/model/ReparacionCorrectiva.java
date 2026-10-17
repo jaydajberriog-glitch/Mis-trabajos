@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 import java.util.List;
+
 public class ReparacionCorrectiva extends Servicio {
     public static final double COSTO_HORA=45000;
     public ReparacionCorrectiva(){super("SER-REP","Reparación correctiva","Solución de fallas identificadas",COSTO_HORA);}
