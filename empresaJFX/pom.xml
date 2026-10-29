@@ -60,7 +60,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                co.edu.uniquindio.poo.empresajfx/co.edu.uniquindio.poo.empresajfx.App
+                                co.edu.uniquindio.poo.empresajfx/co.edu.uniquindio.poo.empresajfx.app.App
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

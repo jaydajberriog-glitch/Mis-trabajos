@@ -1,7 +1,8 @@
 package co.edu.uniquindio.poo.empresajfx.model;
 
 public class Producto {
-    private String codigo, nombre;
+    private String codigo;
+    private String nombre;
     private double precio;
 
     public Producto(String codigo, String nombre, double precio) {
