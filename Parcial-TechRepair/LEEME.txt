@@ -1,0 +1,12 @@
+TECHREPAIR - Java 17
+
+Abrir la carpeta TechRepair desde IntelliJ IDEA como proyecto Maven.
+Verificar que Project SDK y Maven Runner utilicen JDK 17.
+La clase principal es src/main/java/co/edu/uniquindio/poo/app/Main.java.
+
+Servicios precargados:
+SER-DIAG = Diagnóstico ($35.000)
+SER-MANT = Mantenimiento preventivo (tarifa según el equipo)
+SER-REP = Reparación correctiva ($45.000 por hora + repuestos)
+
+La información se conserva en memoria mientras el programa está ejecutándose; al cerrar la aplicación se reinicia.
