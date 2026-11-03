@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1b989ff2-74e7-4814-8767-2639df3a5b0f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/Taller_Herencia.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/src/app/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/src/model/CategoriaEmpleado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/src/model/Empleado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/src/model/EmpleadoPlanta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/src/model/EmpleadoTemporal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/src/model/EmpleadoVentas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/src/model/Empresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Taller_Herencia/src/model/ResumenPago.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/LEEME.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/app/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/CategoriaRepuesto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/ComputadorEscritorio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/ComputadorPortatil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/DetalleServicio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/Diagnostico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/Equipo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/EspecialidadTecnico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/EstadoDetalle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/EstadoOrden.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/EstadoTecnico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/MantenimientoPreventivo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/OrdenServicio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/ReparacionCorrectiva.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/Repuesto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/RepuestoUtilizado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/Servicio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/TechRepair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/Tecnico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/TelefonoInteligente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechRepair/src/main/java/co/edu/uniquindio/poo/model/TipoEquipo.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jaydajberriog-glitch&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jaydajberriog-glitch/Mis-trabajos.git&quot;,
+    &quot;accountId&quot;: &quot;d7b32d1c-1fd8-4181-a0ea-00cefd56f58a&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3KpxEukxHgYUQ754mArfX9lZ1vp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Parcial - Hotel StayPlus" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Parcial - Hotel StayPlus" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b989ff2-74e7-4814-8767-2639df3a5b0f" name="Changes" comment="" />
+      <created>1792268202430</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1792268202430</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
