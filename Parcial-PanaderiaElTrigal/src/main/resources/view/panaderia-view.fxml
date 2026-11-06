@@ -12,8 +12,8 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
-            prefWidth="1100.0" prefHeight="720.0"
-            style="-fx-background-color: #F6F3EC;">
+            fx:controller="viewcontrollers.PanaderiaViewController"
+            prefWidth="1100.0" prefHeight="720.0">
 
     <top>
         <VBox spacing="5.0" style="-fx-background-color: #183D2B;">
