@@ -83,8 +83,10 @@ PanaderiaViewController {
 
             mostrarAlerta(
                     "Pedido asignado",
-                    "Pedido asignado al panadero " + pedido.getCodigoPanaderoAsignado()
-                            + ". Tiempo reservado: " + pedido.getMinutosReservados() + " minutos."
+                    "Pedido asignado a "
+                            + controller.obtenerNombrePanadero(pedido.getCodigoPanaderoAsignado())
+                            + " (" + pedido.getCodigoPanaderoAsignado() + "). Tiempo reservado: "
+                            + pedido.getMinutosReservados() + " minutos."
             );
             actualizarTablas();
         } catch (IllegalArgumentException | IllegalStateException e) {
@@ -127,9 +129,16 @@ PanaderiaViewController {
                 new SimpleStringProperty(dato.getValue().getEstado().toString()));
 
         TableColumn<Pedido, String> panadero = new TableColumn<>("Panadero");
-        panadero.setCellValueFactory(dato ->
-                new SimpleStringProperty(dato.getValue().getCodigoPanaderoAsignado() == null
-                        ? "-" : dato.getValue().getCodigoPanaderoAsignado()));
+        panadero.setCellValueFactory(dato -> {
+            String codigoPanadero = dato.getValue().getCodigoPanaderoAsignado();
+
+            if (codigoPanadero == null) {
+                return new SimpleStringProperty("-");
+            }
+
+            String nombrePanadero = controller.obtenerNombrePanadero(codigoPanadero);
+            return new SimpleStringProperty(nombrePanadero + " (" + codigoPanadero + ")");
+        });
 
         TableColumn<Pedido, String> minutos = new TableColumn<>("Minutos");
         minutos.setCellValueFactory(dato ->

@@ -40,4 +40,8 @@ public class PanaderiaController {
     public List<Empleado> obtenerEmpleados() {
         return panaderia.getEmpleados();
     }
+
+    public String obtenerNombrePanadero(String codigo) {
+        return panaderia.buscarPanaderoPorCodigo(codigo).getNombre();
+    }
 }
