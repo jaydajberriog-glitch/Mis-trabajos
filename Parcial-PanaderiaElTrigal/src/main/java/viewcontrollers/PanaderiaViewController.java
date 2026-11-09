@@ -15,7 +15,8 @@ import model.Panadero;
 import model.Pedido;
 import model.TipoPan;
 
-public class PanaderiaViewController {
+public class
+PanaderiaViewController {
 
     private PanaderiaController controller;
 
@@ -181,6 +182,9 @@ public class PanaderiaViewController {
 
         tblPedidos.setItems(FXCollections.observableArrayList(controller.obtenerPedidos()));
         tblEmpleados.setItems(FXCollections.observableArrayList(controller.obtenerEmpleados()));
+
+        tblPedidos.refresh();
+        tblEmpleados.refresh();
     }
 
     private void limpiarFormulario() {
