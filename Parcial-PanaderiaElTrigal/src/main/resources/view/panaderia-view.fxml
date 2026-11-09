@@ -44,11 +44,11 @@
                 <HBox spacing="10.0">
                     <VBox spacing="5.0" HBox.hgrow="ALWAYS">
                         <Label text="Código del pedido"/>
-                        <TextField fx:id="txtCodigo" promptText="Ej. PED-001"/>
+                        <TextField fx:id="txtCodigo" promptText="Ej: 001"/>
                     </VBox>
                     <VBox spacing="5.0" HBox.hgrow="ALWAYS">
                         <Label text="Nombre del cliente"/>
-                        <TextField fx:id="txtCliente" promptText="Nombre de cafetería o restaurante"/>
+                        <TextField fx:id="txtCliente" promptText="Ej: Pepito Perez"/>
                     </VBox>
                     <VBox spacing="5.0" prefWidth="170.0">
                         <Label text="Tipo de pan"/>
@@ -56,7 +56,7 @@
                     </VBox>
                     <VBox spacing="5.0" prefWidth="120.0">
                         <Label text="Cantidad"/>
-                        <TextField fx:id="txtCantidad" promptText="Ej. 24"/>
+                        <TextField fx:id="txtCantidad" promptText="Ej: 12"/>
                     </VBox>
                 </HBox>
 
