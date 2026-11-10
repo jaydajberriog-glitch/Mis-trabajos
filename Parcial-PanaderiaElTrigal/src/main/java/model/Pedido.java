@@ -36,7 +36,7 @@ public class Pedido {
         this.minutosReservados = 0;
     }
 
-    public void asignar(String codigoPanadero, int minutos) {
+    void asignar(String codigoPanadero, int minutos) {
         if (estado != EstadoPedido.PENDIENTE) {
             throw new IllegalStateException("Solo se pueden asignar pedidos pendientes.");
         }
@@ -52,7 +52,7 @@ public class Pedido {
         this.estado = EstadoPedido.ASIGNADO;
     }
 
-    public void cancelar() {
+    void cancelar() {
         if (estado == EstadoPedido.CANCELADO) {
             throw new IllegalStateException("El pedido ya está cancelado.");
         }

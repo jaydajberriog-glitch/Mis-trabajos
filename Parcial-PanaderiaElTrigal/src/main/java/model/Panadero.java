@@ -28,7 +28,7 @@ public abstract class Panadero extends Empleado implements Produccion {
         return minutosDisponibles >= minutos;
     }
 
-    public void descontarMinutos(int minutos) {
+    void descontarMinutos(int minutos) {
         if (minutos <= 0) {
             throw new IllegalArgumentException("Los minutos a descontar deben ser mayores que cero.");
         }
@@ -39,7 +39,7 @@ public abstract class Panadero extends Empleado implements Produccion {
         minutosDisponibles -= minutos;
     }
 
-    public void devolverMinutos(int minutos) {
+    void devolverMinutos(int minutos) {
         if (minutos <= 0) {
             throw new IllegalArgumentException("Los minutos a devolver deben ser mayores que cero.");
         }
