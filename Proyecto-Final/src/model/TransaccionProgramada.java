@@ -15,9 +15,15 @@ public class TransaccionProgramada {
 
     public TransaccionProgramada(String id, String tipo, BigDecimal monto, Monedero origen,
                                  Monedero destino, Periodicidad periodicidad, LocalDate fecha) {
-        this.id=id; this.tipo=tipo; this.monto=monto; this.origen=origen; this.destino=destino;
-        this.periodicidad=periodicidad; this.proximaEjecucion=fecha;
+        this.id = id;
+        this.tipo = tipo;
+        this.monto = monto;
+        this.origen = origen;
+        this.destino = destino;
+        this.periodicidad = periodicidad;
+        this.proximaEjecucion = fecha;
     }
+
     public String getId() { return id; }
     public String getTipo() { return tipo; }
     public BigDecimal getMonto() { return monto; }
@@ -26,6 +32,7 @@ public class TransaccionProgramada {
     public Periodicidad getPeriodicidad() { return periodicidad; }
     public LocalDate getProximaEjecucion() { return proximaEjecucion; }
     public boolean isActiva() { return activa; }
+
     public void avanzarFecha() {
         proximaEjecucion = switch (periodicidad) {
             case DIARIA -> proximaEjecucion.plusDays(1);
@@ -33,6 +40,11 @@ public class TransaccionProgramada {
             case MENSUAL -> proximaEjecucion.plusMonths(1);
         };
     }
-    public void desactivar() { activa=false; }
-    @Override public String toString() { return id + " | " + tipo + " | $" + monto + " | " + proximaEjecucion + " | " + (activa ? "ACTIVA" : "INACTIVA"); }
+
+    public void desactivar() { activa = false; }
+
+    @Override
+    public String toString() {
+        return id + " | " + tipo + " | $" + monto + " | " + proximaEjecucion + " | " + (activa ? "ACTIVA" : "INACTIVA");
+    }
 }

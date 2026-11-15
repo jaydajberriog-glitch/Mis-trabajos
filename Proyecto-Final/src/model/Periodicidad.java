@@ -1,2 +1,5 @@
 package model;
-public enum Periodicidad { DIARIA, SEMANAL, MENSUAL }
+
+public enum Periodicidad {
+    DIARIA, SEMANAL, MENSUAL
+}

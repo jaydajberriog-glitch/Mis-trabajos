@@ -1,2 +1,5 @@
 package model;
-public enum EstadoTransaccion { EXITOSA, REVERSADA }
+
+public enum EstadoTransaccion {
+    EXITOSA, REVERSADA
+}

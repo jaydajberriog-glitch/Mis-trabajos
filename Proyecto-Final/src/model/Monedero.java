@@ -1,5 +1,7 @@
 package model;
 
+import exception.OperacionInvalidaException;
+import exception.SaldoInsuficienteException;
 import java.math.BigDecimal;
 
 public class Monedero {
@@ -9,22 +11,32 @@ public class Monedero {
 
     public Monedero(String codigo, TipoMonedero tipo) {
         if (codigo == null || codigo.isBlank() || tipo == null)
-            throw new IllegalArgumentException("Código y tipo de monedero son obligatorios.");
+            throw new OperacionInvalidaException("Código y tipo de monedero son obligatorios.");
         this.codigo = codigo.trim();
         this.tipo = tipo;
     }
-    public void acreditar(BigDecimal monto) { validarMonto(monto); saldo = saldo.add(monto); }
+
+    public void acreditar(BigDecimal monto) {
+        validarMonto(monto);
+        saldo = saldo.add(monto);
+    }
+
     public void debitar(BigDecimal monto) {
         validarMonto(monto);
-        if (saldo.compareTo(monto) < 0) throw new IllegalArgumentException("Saldo insuficiente.");
+        if (saldo.compareTo(monto) < 0)
+            throw new SaldoInsuficienteException("Saldo insuficiente en el monedero " + codigo + ".");
         saldo = saldo.subtract(monto);
     }
+
     private void validarMonto(BigDecimal monto) {
         if (monto == null || monto.compareTo(BigDecimal.ZERO) <= 0)
-            throw new IllegalArgumentException("El monto debe ser mayor que cero.");
+            throw new OperacionInvalidaException("El monto debe ser mayor que cero.");
     }
+
     public String getCodigo() { return codigo; }
     public TipoMonedero getTipo() { return tipo; }
     public BigDecimal getSaldo() { return saldo; }
-    @Override public String toString() { return codigo + " - " + tipo + " - $" + saldo; }
+
+    @Override
+    public String toString() { return codigo + " - " + tipo + " - $" + saldo; }
 }
