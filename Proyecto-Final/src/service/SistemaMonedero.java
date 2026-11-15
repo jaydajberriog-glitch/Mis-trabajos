@@ -1,4 +1,4 @@
-package co.edu.monedero.service;
+package service;
 
 import co.edu.monedero.exception.MonederoException;
 import co.edu.monedero.model.*;

@@ -1,4 +1,4 @@
-package co.edu.monedero.model;
+package model;
 
 public class Beneficio {
     private final String nombre;

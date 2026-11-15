@@ -1,2 +1,2 @@
-package co.edu.monedero.model;
+package model;
 public enum TipoMonedero { AHORROS, GASTOS_DIARIOS }

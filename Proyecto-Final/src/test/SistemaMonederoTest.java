@@ -1,6 +1,6 @@
-package co.edu.monedero.service;
+package test;
 
-import co.edu.monedero.model.*;
+import model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;

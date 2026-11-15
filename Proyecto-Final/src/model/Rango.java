@@ -1,4 +1,4 @@
-package co.edu.monedero.model;
+package model;
 
 public enum Rango {
     BRONCE, PLATA, ORO, PLATINO;

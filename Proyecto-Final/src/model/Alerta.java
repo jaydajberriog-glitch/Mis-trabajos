@@ -1,4 +1,4 @@
-package co.edu.monedero.model;
+package model;
 import java.time.LocalDateTime;
 public class Alerta {
     private final String mensaje;

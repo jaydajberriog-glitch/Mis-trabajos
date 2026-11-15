@@ -1,4 +1,4 @@
-package co.edu.monedero.model;
+package model;
 import java.math.BigDecimal;
 public class Deposito extends Transaccion {
     public Deposito(String id, BigDecimal monto, Monedero destino, Cliente cliente) {

@@ -1,7 +1,7 @@
-package co.edu.monedero.app;
+package app;
 
-import co.edu.monedero.model.*;
-import co.edu.monedero.service.SistemaMonedero;
+import model.*;
+import service.SistemaMonedero;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
