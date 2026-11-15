@@ -60,7 +60,8 @@ public class MonederoViewController {
         dpProgFecha.setValue(LocalDate.now());
 
         actualizarResumen();
-        mensaje("✔ Bienvenido al Monedero Virtual. Se cargaron clientes de ejemplo (1001 y 1002) listos para probar.");
+        mensaje("✔ Bienvenido al Monedero Virtual. Clientes iniciales cargados:");
+        onListarClientes();
     }
 
     private void ejecutar(Runnable accion) {
@@ -96,9 +97,9 @@ public class MonederoViewController {
                     txtClienteTel.getText(), txtClienteCorreo.getText());
             mensaje("✔ Cliente registrado: " + txtClienteNombre.getText() + " (" + txtClienteDoc.getText() + ")");
             txtClienteDoc.clear(); txtClienteNombre.clear(); txtClienteTel.clear(); txtClienteCorreo.clear();
+            onListarClientes();
         });
     }
-
     @FXML
     private void onListarClientes() {
         ejecutar(() -> {
@@ -107,17 +108,6 @@ public class MonederoViewController {
                     mensaje("• " + c + " | Puntos: " + c.getPuntos() + " | Rango: " + c.getRango()));
         });
     }
-
-    // --- ACCIONES MONEDEROS ---
-    @FXML
-    private void onCrearMonedero() {
-        ejecutar(() -> {
-            controller.crearMonedero(txtMonDoc.getText(), txtMonCodigo.getText(), cmbMonTipo.getValue());
-            mensaje("✔ Monedero creado: " + txtMonCodigo.getText() + " (" + cmbMonTipo.getValue() + ")");
-            txtMonCodigo.clear();
-        });
-    }
-
     @FXML
     private void onConsultarMonederos() {
         ejecutar(() -> {

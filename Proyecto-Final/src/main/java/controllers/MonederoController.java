@@ -19,8 +19,8 @@ public class MonederoController {
     }
 
     private void cargarDatosIniciales() {
-        Cliente ana = new Cliente("1001", "Ana Pérez", "3001112233", "ana@email.com");
-        Cliente luis = new Cliente("1002", "Luis Gómez", "3004445566", "luis@email.com");
+        Cliente ana = new Cliente("1001", "Robinson Arias Muñoz", "3001234567", "rob@gmail.com");
+        Cliente luis = new Cliente("1002", "Jayda Berrio", "3007654321", "jayber@email.com");
         sistema.registrarCliente(ana);
         sistema.registrarCliente(luis);
         sistema.crearMonedero("1001", "AH-001", TipoMonedero.AHORROS);
