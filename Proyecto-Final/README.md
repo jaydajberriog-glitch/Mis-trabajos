@@ -1,25 +1,39 @@
 # Monedero Virtual
 
-Proyecto académico desarrollado con Java 17, JavaFX, Maven y JUnit 5.
+Proyecto académico desarrollado con Java 17, JavaFX, Maven y JUnit 5 (arquitectura MVC).
 
 ## Abrir y ejecutar en IntelliJ IDEA
 1. Descomprime la carpeta.
-2. En IntelliJ, selecciona **Open** y elige la carpeta `MonederoVirtual` (la que contiene `pom.xml`).
+2. En IntelliJ, selecciona **Open** y elige la carpeta que contiene `pom.xml`.
 3. Espera a que Maven descargue JavaFX y JUnit.
-4. Abre la ventana Maven y ejecuta `Plugins > javafx > javafx:run`, o abre `MainApp.java` y ejecútalo si IntelliJ reconoce la configuración.
-5. Para ejecutar las pruebas, usa Maven `Lifecycle > test`.
+4. Ejecuta `Plugins > javafx > javafx:run`, o abre `view/Aplicacion.java` y ejecútalo.
+5. Para las pruebas: `Lifecycle > test`.
 
-También puedes ejecutar desde una terminal ubicada en la carpeta del proyecto:
-- Windows: `mvn clean javafx:run`
-- Pruebas: `mvn test`
+Desde terminal: `mvn clean javafx:run` y `mvn test`.
 
-## Reglas de negocio iniciales
-- Cada $10.000 completos en depósitos y transferencias enviadas generan 1 punto.
-- Los retiros no generan puntos.
-- Rangos: Bronce (0-499), Plata (500-1499), Oro (1500-2999), Platino (3000 o más).
-- Se alerta saldo bajo cuando un monedero queda por debajo de $20.000.
-- Un movimiento se considera atípico cuando supera la media más dos desviaciones estándar.
-- Beneficios de ejemplo: bono de $10.000 por 1000 puntos y bono de $25.000 por 2200 puntos.
+## Reglas de negocio (según el enunciado)
+- Puntos: depósitos 1 punto por cada 100 unidades, retiros 2 y transferencias 3 (solo el monto, sin comisión).
+- Rangos: Bronce 0-500, Plata 501-1000, Oro 1001-5000, Platino más de 5000.
+- Comisiones: transferencias 2% y retiros 1% del monto.
+- Tarifas por rango: descuento sobre la comisión de transferencias (Plata 5%, Oro 10%, Platino 20%).
+- Beneficios canjeables:
+  - 100 puntos: 10% menos en la comisión de transferencias (se suma al descuento del rango).
+  - 500 puntos: 30 días sin comisión en retiros.
+  - 1000 puntos: bono de 50 unidades en el monedero.
+- Al revertir una transacción se restauran saldos, comisión y puntos; el historial de puntos registra el ajuste.
+- Alertas: saldo bajo (menos de $20.000), recordatorios de transacciones programadas (hoy o mañana),
+  movimientos atípicos y canjes. Cada alerta se notifica por correo, WhatsApp y SMS (envío simulado).
+- Detección de atípicas: un gasto (retiro o transferencia no reversado) es atípico si supera
+  promedio + 2 x desviación estándar (poblacional). Queda marcado como SOSPECHOSA y genera una alerta.
+  Se necesitan al menos 6 gastos para que un valor pueda superar ese límite. Complejidad O(n).
 
-## Alcance de esta versión
-Los datos se mantienen en memoria durante la ejecución. Al cerrar la aplicación se reinician. La persistencia en archivos o base de datos no fue solicitada expresamente y se puede agregar después.
+## Estructura
+- `view`, `viewcontrollers`: interfaz JavaFX (FXML).
+- `controllers`: `MonederoController`.
+- `model`: dominio (`SistemaMonedero` como fachada, transacciones, puntos, alertas, notificadores, detector).
+- `exceptions`: `MonederoException` y sus tres subclases de negocio.
+
+## Alcance
+Los datos se mantienen en memoria durante la ejecución. Las notificaciones son simuladas: se muestran en la
+consola de la aplicación con el formato de cada canal; gracias a la interfaz `Notificador`, un canal real
+se puede integrar sin tocar el resto del sistema.

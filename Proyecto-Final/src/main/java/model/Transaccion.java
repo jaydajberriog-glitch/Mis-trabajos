@@ -13,6 +13,7 @@ public abstract class Transaccion implements OperacionFinanciera {
     private final Monedero destino;
     private final Cliente clientePuntos;
     private int puntosOtorgados;
+    private BigDecimal comision = BigDecimal.ZERO;
     private EstadoTransaccion estado = EstadoTransaccion.EXITOSA;
 
     protected Transaccion(String id, BigDecimal monto, Monedero origen, Monedero destino, Cliente clientePuntos) {
@@ -46,11 +47,17 @@ public abstract class Transaccion implements OperacionFinanciera {
     public int getPuntosOtorgados() { return puntosOtorgados; }
     public void setPuntosOtorgados(int puntos) { puntosOtorgados = puntos; }
     public EstadoTransaccion getEstado() { return estado; }
+    public BigDecimal getComision() { return comision; }
+    public void setComision(BigDecimal comision) { this.comision = comision == null ? BigDecimal.ZERO : comision; }
     public void marcarReversada() { estado = EstadoTransaccion.REVERSADA; }
+    public void marcarSospechosa() {
+        if (estado == EstadoTransaccion.EXITOSA) estado = EstadoTransaccion.SOSPECHOSA;
+    }
 
     @Override
     public String toString() {
         return fecha.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")) + " | " + getTipo() +
-                " | $" + monto + " | " + estado + " | " + id;
+                " | $" + monto + (comision.signum() > 0 ? " (comisión $" + comision + ")" : "")
+                + " | " + estado + " | " + id;
     }
 }

@@ -65,13 +65,23 @@ public class MonederoViewController {
     }
 
     private void ejecutar(Runnable accion) {
+        int notificacionesPrevias = controller.getNotificaciones().size();
         try {
             accion.run();
+            mostrarNotificacionesNuevas(notificacionesPrevias);
             actualizarResumen();
         } catch (NumberFormatException ex) {
             mensaje("✖ Error: Ingrese un valor numérico válido para el monto.");
         } catch (Exception ex) {
             mensaje("✖ Error: " + ex.getMessage());
+        }
+    }
+
+    private void mostrarNotificacionesNuevas(int desde) {
+        var todas = controller.getNotificaciones();
+        if (todas.size() > desde) {
+            mensaje("📨 Notificaciones simuladas enviadas:");
+            todas.subList(desde, todas.size()).forEach(n -> mensaje("   " + n));
         }
     }
 
@@ -141,7 +151,8 @@ public class MonederoViewController {
     private void onRetirar() {
         ejecutar(() -> {
             var t = controller.retirar(txtOpOrigen.getText(), dinero(txtOpMonto));
-            mensaje("✔ Retiro exitoso [" + t.getId() + "] por $" + t.getMonto() + " (+" + t.getPuntosOtorgados() + " pts)");
+            mensaje("✔ Retiro exitoso [" + t.getId() + "] por $" + t.getMonto() + " | comisión $" + t.getComision()
+                    + " (+" + t.getPuntosOtorgados() + " pts)");
         });
     }
 
@@ -149,7 +160,8 @@ public class MonederoViewController {
     private void onTransferir() {
         ejecutar(() -> {
             var t = controller.transferir(txtOpOrigen.getText(), txtOpDestino.getText(), dinero(txtOpMonto));
-            mensaje("✔ Transferencia exitosa [" + t.getId() + "] por $" + t.getMonto() + " (+" + t.getPuntosOtorgados() + " pts)");
+            mensaje("✔ Transferencia exitosa [" + t.getId() + "] por $" + t.getMonto() + " | comisión $" + t.getComision()
+                    + " (+" + t.getPuntosOtorgados() + " pts)");
         });
     }
 
@@ -178,6 +190,17 @@ public class MonederoViewController {
             if (cmbPtsBeneficio.getValue() == null) throw new IllegalArgumentException("Seleccione un beneficio.");
             controller.canjearBeneficio(txtPtsDoc.getText(), cmbPtsBeneficio.getValue().getNombre(), txtPtsMonedero.getText());
             mensaje("✔ Beneficio '" + cmbPtsBeneficio.getValue().getNombre() + "' canjeado con éxito.");
+        });
+    }
+
+    @FXML
+    private void onVerHistorialPuntos() {
+        ejecutar(() -> {
+            String doc = txtPtsDoc.getText();
+            mensaje("--- HISTORIAL DE PUNTOS (" + doc + ") ---");
+            var historial = controller.getHistorialPuntos(doc);
+            if (historial.isEmpty()) mensaje("Sin movimientos de puntos.");
+            else historial.forEach(m -> mensaje("• " + m));
         });
     }
 
@@ -216,6 +239,16 @@ public class MonederoViewController {
     }
 
     @FXML
+    private void onGenerarRecordatorios() {
+        ejecutar(() -> {
+            mensaje("--- RECORDATORIOS DE PROGRAMADAS (hoy y mañana) ---");
+            var res = controller.generarRecordatorios(LocalDate.now());
+            if (res.isEmpty()) mensaje("No hay recordatorios nuevos.");
+            else res.forEach(r -> mensaje("🔔 " + r));
+        });
+    }
+
+    @FXML
     private void onListarProgramadas() {
         ejecutar(() -> {
             mensaje("--- TRANSACCIONES PROGRAMADAS ---");
@@ -238,6 +271,15 @@ public class MonederoViewController {
             mensaje("--- ALERTAS Y NOTIFICACIONES ---");
             if (controller.getAlertas().isEmpty()) mensaje("No hay alertas registradas.");
             else controller.getAlertas().forEach(a -> mensaje("⚠ " + a));
+        });
+    }
+
+    @FXML
+    private void onMostrarNotificaciones() {
+        ejecutar(() -> {
+            mensaje("--- NOTIFICACIONES SIMULADAS (correo, WhatsApp, SMS) ---");
+            if (controller.getNotificaciones().isEmpty()) mensaje("No se han enviado notificaciones.");
+            else controller.getNotificaciones().forEach(n -> mensaje("📨 " + n));
         });
     }
 

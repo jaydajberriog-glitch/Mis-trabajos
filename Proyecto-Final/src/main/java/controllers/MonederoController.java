@@ -71,6 +71,18 @@ public class MonederoController {
         return sistema.ejecutarProgramadas(fecha);
     }
 
+    public void desactivarProgramada(String id) {
+        sistema.desactivarProgramada(id);
+    }
+
+    public List<String> generarRecordatorios(LocalDate hoy) {
+        return sistema.generarRecordatorios(hoy);
+    }
+
+    public List<MovimientoPuntos> getHistorialPuntos(String documento) {
+        return sistema.buscarCliente(documento).getHistorialPuntos();
+    }
+
     public double promedioGastos(String documento) {
         return sistema.promedioGastos(documento);
     }
@@ -89,4 +101,5 @@ public class MonederoController {
     public List<Beneficio> getBeneficios() { return sistema.getBeneficios(); }
     public List<TransaccionProgramada> getProgramadas() { return sistema.getProgramadas(); }
     public List<Alerta> getAlertas() { return sistema.getAlertas(); }
+    public List<String> getNotificaciones() { return sistema.getNotificaciones(); }
 }

@@ -127,6 +127,7 @@
                     <HBox spacing="10.0">
                         <TextField fx:id="txtPtsDoc" prefWidth="200.0" promptText="Documento del cliente" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
                         <Button onAction="#onConsultarPuntos" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="⭐ Consultar puntos y rango"/>
+                        <Button onAction="#onVerHistorialPuntos" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="📜 Historial de puntos"/>
                     </HBox>
                     <HBox spacing="10.0">
                         <TextField fx:id="txtPtsMonedero" prefWidth="220.0" promptText="Código de monedero destino" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
@@ -183,6 +184,7 @@
                         <Button onAction="#onProgramarOperacion" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="🗓 Programar operación"/>
                         <Button onAction="#onEjecutarProgramadas" style="-fx-background-color: #D97706; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="▶ Ejecutar pendientes hasta hoy"/>
                         <Button onAction="#onListarProgramadas" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="📋 Listar programadas"/>
+                        <Button onAction="#onGenerarRecordatorios" style="-fx-background-color: #D97706; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="🔔 Generar recordatorios"/>
                     </HBox>
                 </VBox>
             </VBox>
@@ -202,6 +204,7 @@
                     <HBox spacing="10.0">
                         <Button onAction="#onMostrarHistorial" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="📜 Mostrar historial de transacciones"/>
                         <Button onAction="#onMostrarAlertas" style="-fx-background-color: #D97706; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="🔔 Mostrar alertas del sistema"/>
+                        <Button onAction="#onMostrarNotificaciones" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="📨 Ver notificaciones enviadas"/>
                     </HBox>
                 </VBox>
             </VBox>

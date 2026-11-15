@@ -1,5 +1,5 @@
 package model;
 
 public enum EstadoTransaccion {
-    EXITOSA, REVERSADA
+    EXITOSA, REVERSADA, SOSPECHOSA
 }
