@@ -100,6 +100,7 @@ public class MonederoViewController {
             onListarClientes();
         });
     }
+
     @FXML
     private void onListarClientes() {
         ejecutar(() -> {
@@ -108,6 +109,17 @@ public class MonederoViewController {
                     mensaje("• " + c + " | Puntos: " + c.getPuntos() + " | Rango: " + c.getRango()));
         });
     }
+
+    // --- ACCIONES MONEDEROS ---
+    @FXML
+    private void onCrearMonedero() {
+        ejecutar(() -> {
+            controller.crearMonedero(txtMonDoc.getText(), txtMonCodigo.getText(), cmbMonTipo.getValue());
+            mensaje("✔ Monedero creado: " + txtMonCodigo.getText() + " (" + cmbMonTipo.getValue() + ")");
+            txtMonCodigo.clear();
+        });
+    }
+
     @FXML
     private void onConsultarMonederos() {
         ejecutar(() -> {
