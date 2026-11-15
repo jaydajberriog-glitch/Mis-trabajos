@@ -1,6 +1,6 @@
 package model;
 
-import exception.OperacionInvalidaException;
+import exceptions.OperacionInvalidaException;
 
 public class Beneficio {
     private final String nombre;

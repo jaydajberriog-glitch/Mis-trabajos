@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="14.0" style="-fx-background-color: #EEF3F0; -fx-font-family: 'Segoe UI', sans-serif;"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="viewcontrollers.MonederoViewController">
+    <padding>
+        <Insets bottom="18.0" left="18.0" right="18.0" top="18.0"/>
+    </padding>
+
+    <!-- ENCABEZADO BANNER -->
+    <VBox style="-fx-background-color: linear-gradient(to right, #1B4332, #2D6A4F); -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 10, 0, 0, 3);">
+        <padding>
+            <Insets bottom="18.0" left="22.0" right="22.0" top="18.0"/>
+        </padding>
+        <HBox alignment="CENTER_LEFT" spacing="15.0">
+            <VBox spacing="4.0">
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" text="💰 MONEDERO VIRTUAL"/>
+                <Label style="-fx-font-size: 13px; -fx-text-fill: #B7E4C7;" text="Gestión inteligente de cuentas, transferencias, puntos y análisis de gastos"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                <Label fx:id="lblClientesCount" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 6 12 6 12; -fx-background-radius: 20;" text="👤 Clientes: 0"/>
+                <Label fx:id="lblMonederosCount" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 6 12 6 12; -fx-background-radius: 20;" text="💳 Monederos: 0"/>
+                <Label fx:id="lblAlertasCount" style="-fx-background-color: #D97706; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12px; -fx-padding: 6 12 6 12; -fx-background-radius: 20;" text="🔔 Alertas: 0"/>
+            </HBox>
+        </HBox>
+    </VBox>
+
+    <!-- PESTAÑAS PRINCIPALES -->
+    <TabPane style="-fx-background-color: transparent; -fx-font-size: 13px;" tabClosingPolicy="UNAVAILABLE">
+        <!-- TAB 1: CLIENTES -->
+        <Tab text="👤 Clientes">
+            <VBox>
+                <padding><Insets bottom="4.0" left="2.0" right="2.0" top="12.0"/></padding>
+                <VBox spacing="12.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-border-color: #D5E0DA; -fx-border-radius: 12; -fx-effect: dropshadow(gaussian, rgba(27,67,50,0.08), 8, 0, 0, 2);">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/></padding>
+                    <VBox spacing="3.0">
+                        <Label style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: #1B4332;" text="Registro y Consulta de Clientes"/>
+                        <Label style="-fx-font-size: 12.5px; -fx-text-fill: #5C7065;" text="Crea nuevos usuarios en el sistema o consulta sus puntos y categoría actual."/>
+                        <Separator/>
+                    </VBox>
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtClienteDoc" prefWidth="200.0" promptText="Documento de identidad" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <TextField fx:id="txtClienteNombre" prefWidth="280.0" promptText="Nombre completo" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtClienteTel" prefWidth="200.0" promptText="Teléfono" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <TextField fx:id="txtClienteCorreo" prefWidth="280.0" promptText="Correo electrónico" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Button onAction="#onRegistrarCliente" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="➕ Registrar cliente"/>
+                        <Button onAction="#onListarClientes" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="📋 Consultar todos los clientes"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </Tab>
+
+        <!-- TAB 2: MONEDEROS -->
+        <Tab text="💳 Monederos">
+            <VBox>
+                <padding><Insets bottom="4.0" left="2.0" right="2.0" top="12.0"/></padding>
+                <VBox spacing="12.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-border-color: #D5E0DA; -fx-border-radius: 12; -fx-effect: dropshadow(gaussian, rgba(27,67,50,0.08), 8, 0, 0, 2);">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/></padding>
+                    <VBox spacing="3.0">
+                        <Label style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: #1B4332;" text="Administración de Monederos"/>
+                        <Label style="-fx-font-size: 12.5px; -fx-text-fill: #5C7065;" text="Asocia bolsillos de Ahorros o Gastos Diarios a un cliente existente."/>
+                        <Separator/>
+                    </VBox>
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtMonDoc" prefWidth="200.0" promptText="Documento del cliente" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <TextField fx:id="txtMonCodigo" prefWidth="200.0" promptText="Código (ej: AH-003)" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <ComboBox fx:id="cmbMonTipo" prefWidth="210.0" promptText="Tipo de monedero" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 4 6;"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Button onAction="#onCrearMonedero" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="➕ Crear monedero"/>
+                        <Button onAction="#onConsultarMonederos" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="💰 Consultar saldos"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </Tab>
+
+        <!-- TAB 3: OPERACIONES -->
+        <Tab text="💸 Operaciones">
+            <VBox>
+                <padding><Insets bottom="4.0" left="2.0" right="2.0" top="12.0"/></padding>
+                <VBox spacing="12.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-border-color: #D5E0DA; -fx-border-radius: 12; -fx-effect: dropshadow(gaussian, rgba(27,67,50,0.08), 8, 0, 0, 2);">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/></padding>
+                    <VBox spacing="3.0">
+                        <Label style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: #1B4332;" text="Operaciones Financieras"/>
+                        <Label style="-fx-font-size: 12.5px; -fx-text-fill: #5C7065;" text="Realiza depósitos, retiros, transferencias entre clientes o reversa movimientos por ID."/>
+                        <Separator/>
+                    </VBox>
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtOpOrigen" prefWidth="230.0" promptText="Monedero origen (Retiro/Transf.)" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <TextField fx:id="txtOpDestino" prefWidth="240.0" promptText="Monedero destino (Depósito/Transf.)" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <TextField fx:id="txtOpMonto" prefWidth="180.0" promptText="Monto ($)" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Button onAction="#onDepositar" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="⬇ Depositar"/>
+                        <Button onAction="#onRetirar" style="-fx-background-color: #D97706; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="⬆ Retirar"/>
+                        <Button onAction="#onTransferir" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="⇄ Transferir"/>
+                    </HBox>
+                    <Separator/>
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtOpIdReversar" prefWidth="230.0" promptText="ID transacción (ej: TR-1)" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <Button onAction="#onReversar" style="-fx-background-color: #B91C1C; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="↩ Reversar operación"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </Tab>
+
+        <!-- TAB 4: PUNTOS Y RANGOS -->
+        <Tab text="⭐ Puntos y Rangos">
+            <VBox>
+                <padding><Insets bottom="4.0" left="2.0" right="2.0" top="12.0"/></padding>
+                <VBox spacing="12.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-border-color: #D5E0DA; -fx-border-radius: 12; -fx-effect: dropshadow(gaussian, rgba(27,67,50,0.08), 8, 0, 0, 2);">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/></padding>
+                    <VBox spacing="3.0">
+                        <Label style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: #1B4332;" text="Programa de Puntos, Rangos y Beneficios"/>
+                        <Label style="-fx-font-size: 12.5px; -fx-text-fill: #5C7065;" text="Consulta tu nivel (Bronce, Plata, Oro, Platino) y redime tus puntos acumulados."/>
+                        <Separator/>
+                    </VBox>
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtPtsDoc" prefWidth="200.0" promptText="Documento del cliente" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <Button onAction="#onConsultarPuntos" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="⭐ Consultar puntos y rango"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtPtsMonedero" prefWidth="220.0" promptText="Código de monedero destino" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <ComboBox fx:id="cmbPtsBeneficio" prefWidth="320.0" promptText="Selecciona un beneficio" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 4 6;"/>
+                        <Button onAction="#onCanjearBeneficio" style="-fx-background-color: #D97706; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="🎁 Canjear beneficio"/>
+                    </HBox>
+                    <Label style="-fx-background-color: #E6F4EA; -fx-text-fill: #1B4332; -fx-padding: 8 12; -fx-background-radius: 6; -fx-font-weight: bold;" text="ℹ Regla de puntos: Depósitos = 1 pt | Retiros = 2 pts | Transferencias = 3 pts por cada $100."/>
+                </VBox>
+            </VBox>
+        </Tab>
+
+        <!-- TAB 5: ANÁLISIS -->
+        <Tab text="📊 Análisis">
+            <VBox>
+                <padding><Insets bottom="4.0" left="2.0" right="2.0" top="12.0"/></padding>
+                <VBox spacing="12.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-border-color: #D5E0DA; -fx-border-radius: 12; -fx-effect: dropshadow(gaussian, rgba(27,67,50,0.08), 8, 0, 0, 2);">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/></padding>
+                    <VBox spacing="3.0">
+                        <Label style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: #1B4332;" text="Análisis de Patrones y Detección de Movimientos Atípicos"/>
+                        <Label style="-fx-font-size: 12.5px; -fx-text-fill: #5C7065;" text="Identifica gastos inusuales comparando el historial del cliente mediante desviación estándar."/>
+                        <Separator/>
+                    </VBox>
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtAnalisisDoc" prefWidth="220.0" promptText="Documento del cliente" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <Button onAction="#onAnalizarGastos" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="📊 Analizar patrones de gasto"/>
+                    </HBox>
+                    <Label style="-fx-background-color: #FEF3C7; -fx-text-fill: #92400E; -fx-padding: 8 12; -fx-background-radius: 6;" text="ℹ Se evalúan retiros y transferencias exitosas. Un movimiento es atípico si supera: Promedio + 2 × Desviación Estándar."/>
+                </VBox>
+            </VBox>
+        </Tab>
+
+        <!-- TAB 6: PROGRAMADAS -->
+        <Tab text="🗓 Programadas">
+            <VBox>
+                <padding><Insets bottom="4.0" left="2.0" right="2.0" top="12.0"/></padding>
+                <VBox spacing="12.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-border-color: #D5E0DA; -fx-border-radius: 12; -fx-effect: dropshadow(gaussian, rgba(27,67,50,0.08), 8, 0, 0, 2);">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/></padding>
+                    <VBox spacing="3.0">
+                        <Label style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: #1B4332;" text="Programación de Transacciones Recurrentes"/>
+                        <Label style="-fx-font-size: 12.5px; -fx-text-fill: #5C7065;" text="Agenda depósitos, retiros o transferencias automáticas ordenadas por fecha de ejecución."/>
+                        <Separator/>
+                    </VBox>
+                    <HBox spacing="10.0">
+                        <ComboBox fx:id="cmbProgTipo" prefWidth="180.0" promptText="Tipo de operación" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 4 6;"/>
+                        <TextField fx:id="txtProgMonto" prefWidth="150.0" promptText="Monto ($)" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <ComboBox fx:id="cmbProgPeriodicidad" prefWidth="160.0" promptText="Periodicidad" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 4 6;"/>
+                        <DatePicker fx:id="dpProgFecha" prefWidth="160.0"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtProgOrigen" prefWidth="220.0" promptText="Monedero origen (si aplica)" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                        <TextField fx:id="txtProgDestino" prefWidth="220.0" promptText="Monedero destino (si aplica)" style="-fx-background-color: #F8FAF9; -fx-border-color: #C4D4CC; -fx-border-radius: 7; -fx-padding: 8 10;"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Button onAction="#onProgramarOperacion" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="🗓 Programar operación"/>
+                        <Button onAction="#onEjecutarProgramadas" style="-fx-background-color: #D97706; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="▶ Ejecutar pendientes hasta hoy"/>
+                        <Button onAction="#onListarProgramadas" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="📋 Listar programadas"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </Tab>
+
+        <!-- TAB 7: HISTORIAL Y ALERTAS -->
+        <Tab text="🔔 Historial y Alertas">
+            <VBox>
+                <padding><Insets bottom="4.0" left="2.0" right="2.0" top="12.0"/></padding>
+                <VBox spacing="12.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-border-color: #D5E0DA; -fx-border-radius: 12; -fx-effect: dropshadow(gaussian, rgba(27,67,50,0.08), 8, 0, 0, 2);">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/></padding>
+                    <VBox spacing="3.0">
+                        <Label style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: #1B4332;" text="Historial de Movimientos y Centro de Alertas"/>
+                        <Label style="-fx-font-size: 12.5px; -fx-text-fill: #5C7065;" text="Consulta todas las operaciones ordenadas por fecha y las notificaciones de saldo bajo o actividad inusual."/>
+                        <Separator/>
+                    </VBox>
+                    <HBox spacing="10.0">
+                        <Button onAction="#onMostrarHistorial" style="-fx-background-color: #2D6A4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="📜 Mostrar historial de transacciones"/>
+                        <Button onAction="#onMostrarAlertas" style="-fx-background-color: #D97706; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 7; -fx-cursor: hand;" text="🔔 Mostrar alertas del sistema"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </Tab>
+    </TabPane>
+
+    <!-- BARRA DE CONSOLA -->
+    <HBox alignment="CENTER_LEFT" spacing="10.0">
+        <Label style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #1B4332;" text="📋 Consola de resultados y actividad"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button onAction="#onLimpiarConsola" style="-fx-background-color: #4A6357; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 6 12; -fx-background-radius: 7; -fx-cursor: hand;" text="🧹 Limpiar consola"/>
+    </HBox>
+
+    <!-- ÁREA DE TEXTO CONSOLA -->
+    <TextArea fx:id="txtSalida" editable="false" prefRowCount="8" wrapText="true"
+              style="-fx-control-inner-background: #102A20; -fx-text-fill: #D8F3DC; -fx-font-family: 'Consolas', 'Monospaced'; -fx-font-size: 13px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #2D6A4F; -fx-border-width: 1.5;"/>
+</VBox>

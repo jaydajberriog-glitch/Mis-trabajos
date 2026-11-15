@@ -1,6 +1,6 @@
 package model;
 
-import exception.OperacionInvalidaException;
+import exceptions.OperacionInvalidaException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

@@ -1,6 +1,6 @@
 package model;
 
-import exception.OperacionInvalidaException;
+import exceptions.OperacionInvalidaException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

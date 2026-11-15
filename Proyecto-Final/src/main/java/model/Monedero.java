@@ -1,7 +1,7 @@
 package model;
 
-import exception.OperacionInvalidaException;
-import exception.SaldoInsuficienteException;
+import exceptions.OperacionInvalidaException;
+import exceptions.SaldoInsuficienteException;
 import java.math.BigDecimal;
 
 public class Monedero {

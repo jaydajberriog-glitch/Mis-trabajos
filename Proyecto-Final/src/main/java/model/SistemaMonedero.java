@@ -1,8 +1,7 @@
-package service;
+package model;
 
-import exception.OperacionInvalidaException;
-import exception.RecursoNoEncontradoException;
-import model.*;
+import exceptions.OperacionInvalidaException;
+import exceptions.RecursoNoEncontradoException;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

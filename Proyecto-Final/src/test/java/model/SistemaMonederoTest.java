@@ -1,12 +1,10 @@
-package test;
+package model;
 
-import exception.OperacionInvalidaException;
-import exception.RecursoNoEncontradoException;
-import exception.SaldoInsuficienteException;
-import model.*;
+import exceptions.OperacionInvalidaException;
+import exceptions.RecursoNoEncontradoException;
+import exceptions.SaldoInsuficienteException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import service.SistemaMonedero;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

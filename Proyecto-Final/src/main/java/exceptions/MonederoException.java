@@ -1,4 +1,4 @@
-package exception;
+package exceptions;
 
 public class MonederoException extends RuntimeException {
     public MonederoException(String mensaje) {
