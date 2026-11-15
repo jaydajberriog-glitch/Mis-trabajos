@@ -1,6 +1,5 @@
 package service;
 
-import exception.MonederoException;
 import exception.OperacionInvalidaException;
 import exception.RecursoNoEncontradoException;
 import model.*;
