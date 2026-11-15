@@ -40,7 +40,8 @@ public class MainApp extends Application {
         mensaje("Bienvenido. Se cargaron dos clientes de ejemplo para facilitar las pruebas.");
     }
 
-    private HBox encabezado() {
+    private
+    encabezado() {
         Label titulo = new Label("MONEDERO VIRTUAL");
         titulo.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #183D2B;");
         Label subtitulo = new Label("Administración de dinero, puntos y beneficios");

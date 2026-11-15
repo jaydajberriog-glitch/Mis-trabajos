@@ -95,6 +95,14 @@ PanaderiaViewController {
     }
 
     @FXML
+    private void mostrarPedidosCancelados() {
+        List<Pedido> cancelados = panaderia.obtenerPedidosCancelados();
+        tablaPedidos.setItems(
+                FXCollections.observableArrayList(cancelados)
+        );
+    }
+
+    @FXML
     private void onCancelarPedido() {
         try {
             asegurarController();

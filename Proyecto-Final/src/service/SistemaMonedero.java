@@ -61,6 +61,7 @@ public class SistemaMonedero {
         Cliente propietario = propietarioDe(origen);
         origen.debitar(monto);
         Retiro t = new Retiro(nuevoId(), monto, origen, propietario);
+        asignarPuntos(t);
         transacciones.add(t);
         revisarSaldo(origen);
         return t;
@@ -81,7 +82,21 @@ public class SistemaMonedero {
         return t;
     }
     private void asignarPuntos(Transaccion t) {
-        int puntos = t.getMonto().divideToIntegralValue(new BigDecimal("10000")).intValue();
+        int puntosPorCadaCien;
+        if (t instanceof Deposito) {
+            puntosPorCadaCien = 1;
+        } else if (t instanceof Retiro) {
+            puntosPorCadaCien = 2;
+        } else if (t instanceof Transferencia) {
+            puntosPorCadaCien = 3;
+        } else {
+            puntosPorCadaCien = 0;
+        }
+
+        int bloquesDeCien = t.getMonto()
+                .divideToIntegralValue(new BigDecimal("100"))
+                .intValue();
+        int puntos = bloquesDeCien * puntosPorCadaCien;
         t.getClientePuntos().sumarPuntos(puntos);
         t.setPuntosOtorgados(puntos);
     }

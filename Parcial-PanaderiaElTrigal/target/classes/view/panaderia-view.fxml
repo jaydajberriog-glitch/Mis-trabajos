@@ -67,6 +67,7 @@
                             style="-fx-background-color: #C6A45B; -fx-text-fill: #183D2B; -fx-font-weight: bold;"/>
                     <Button text="Cancelar pedido" onAction="#onCancelarPedido"
                             style="-fx-background-color: #8A3D32; -fx-text-fill: white;"/>
+                    <Button text="Pedidos cancelados"  onAction="#mostrarPedidosCancelados"/>
                 </HBox>
                 <Label text="Para asignar o cancelar, escribe el código del pedido en el primer campo."
                        style="-fx-text-fill: #6F6A60; -fx-font-size: 11px;"/>

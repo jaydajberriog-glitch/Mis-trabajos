@@ -1,10 +1,12 @@
 package co.edu.monedero.model;
+
 public enum Rango {
     BRONCE, PLATA, ORO, PLATINO;
+
     public static Rango desdePuntos(int puntos) {
-        if (puntos >= 3000) return PLATINO;
-        if (puntos >= 1500) return ORO;
-        if (puntos >= 500) return PLATA;
+        if (puntos > 5000) return PLATINO;
+        if (puntos >= 1001) return ORO;
+        if (puntos >= 501) return PLATA;
         return BRONCE;
     }
 }

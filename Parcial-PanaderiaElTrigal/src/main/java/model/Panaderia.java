@@ -139,6 +139,16 @@ public class Panaderia {
         return mejorPanadero;
     }
 
+    public List<Pedido> obtenerPedidosCancelados() {
+        List<Pedido> pedidosCancelados = new ArrayList<>();
+        for (Pedido pedido : pedidos.values()) {
+            if (pedido.estaCancelado()) {
+                pedidosCancelados.add(pedido);
+            }
+        }
+        return pedidosCancelados;
+    }
+
     public String getNombre() {
         return nombre;
     }
